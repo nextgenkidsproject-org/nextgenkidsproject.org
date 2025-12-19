@@ -31,7 +31,14 @@ export const Navbar = () => {
   // Determine if the Navbar should be transparent or themed
   const isHomePage = pathname === '/';
   const navBg = scrolled || isOpen ? 'bg-white border-b border-black/5 py-4' : 'bg-transparent py-8';
-  const textColor = scrolled || isOpen ? 'text-black' : (isHomePage ? 'text-black' : 'text-black'); 
+  
+  // Dynamic text color: White over home hero, black otherwise
+  const textColor = (isHomePage && !scrolled && !isOpen) ? 'text-white' : 'text-black';
+  
+  // Dynamic button style: Highlight (Orange) over home hero, black otherwise
+  const buttonClass = (isHomePage && !scrolled && !isOpen) 
+    ? "bg-highlight text-white hover:bg-white hover:text-highlight" 
+    : "bg-black text-white hover:bg-highlight";
 
   return (
     <nav className={cn(
@@ -43,8 +50,9 @@ export const Navbar = () => {
         <div className="flex justify-start">
           <Link href="/" className="group flex items-center gap-2">
             <span className={cn(
-              "text-2xl font-semibold tracking-tighter uppercase transition-colors group-hover:text-highlight",
-              textColor
+              "text-2xl font-semibold tracking-tighter uppercase transition-colors",
+              textColor,
+              "group-hover:text-highlight"
             )}>
               NextGen<span className="group-hover:text-highlight transition-colors">Kids</span>
             </span>
@@ -58,8 +66,8 @@ export const Navbar = () => {
               key={link.href} 
               href={link.href}
               className={cn(
-                "text-[10px] font-semibold uppercase tracking-[0.2em] transition-all hover:text-highlight hover:opacity-100",
-                pathname === link.href ? "opacity-100 text-highlight" : "opacity-40",
+                "text-[10px] font-semibold uppercase tracking-[0.2em] transition-all hover:text-highlight",
+                pathname === link.href ? "text-highlight" : "opacity-40 hover:opacity-100",
                 textColor
               )}
             >
@@ -70,7 +78,9 @@ export const Navbar = () => {
 
         {/* Right: CTA */}
         <div className="hidden lg:flex justify-end items-center gap-6">
-          <Button variant="primary" size="sm" className="bg-black text-white hover:bg-highlight font-semibold">Discovery Portal</Button>
+          <Button variant="primary" size="sm" className={cn("font-semibold transition-all tactile-pop", buttonClass)}>
+            Discovery Portal
+          </Button>
         </div>
 
         {/* Mobile Toggle */}

@@ -37,13 +37,16 @@ export const Carousel = ({ slides }: CarouselProps) => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="absolute inset-0"
         >
-          {/* Main Image - Using Placeholder for now as requested */}
-          <div className="absolute inset-0 bg-neutral-200">
-             <div className="w-full h-full flex items-center justify-center text-neutral-400 font-bold uppercase tracking-widest text-sm">
-                NextGen Editorial Image Placeholder: {slides[current].image}
-             </div>
-             {/* Gradient overlay for text readability */}
-             <div className="absolute inset-0 bg-black/30" />
+          {/* Main Background Image */}
+          <div className="absolute inset-0">
+             <motion.div
+               animate={{ scale: [1.05, 1] }}
+               transition={{ duration: 8, ease: "linear" }}
+               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+               style={{ backgroundImage: `url(${slides[current].image})` }}
+             />
+             {/* Editorial Overlay (Darker for readability) */}
+             <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
           </div>
 
           <div className="absolute inset-0 flex items-center justify-center text-center px-6">

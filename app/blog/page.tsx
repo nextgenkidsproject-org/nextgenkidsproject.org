@@ -44,9 +44,9 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white">
       <PageHero 
         chapter="Chapter Five: Insights"
-        title="Thinking Beyond the <span class='text-sun font-playful lowercase tracking-normal italic'>Interface.</span>"
+        title="Thinking Beyond the <span class='text-sun font-playful lowercase tracking-normal italic wavy-underline'>Interface.</span>"
         subtitle="A collection of research, guides, and thought leadership from the frontlines of digital education and youth development."
-        image="BLOG_PAGE_HERO"
+        image="/assets/images/photo-1560253023-3ec5d502959f.jpeg"
         accentColor="sun"
       />
 
@@ -56,7 +56,7 @@ export default function BlogPage() {
            <div className="flex items-center gap-6">
               <Newspaper className="w-10 h-10 text-highlight" />
               <div className="space-y-1">
-                 <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">The Briefing</div>
+                 <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">The <span className="wavy-underline">Briefing</span></div>
                  <h2 className="text-2xl font-semibold tracking-tighter uppercase">Latest Technical Updates</h2>
               </div>
            </div>
@@ -65,7 +65,7 @@ export default function BlogPage() {
               <span className="hover:text-highlight cursor-pointer transition-colors underline underline-offset-8">New School Partner in Lagos</span>
               <span className="hover:text-highlight cursor-pointer transition-colors underline underline-offset-8">Download STEM Guide</span>
            </div>
-           <Button variant="outline" size="sm" className="border-black font-semibold">Live Feed</Button>
+           <Button variant="outline" size="sm" className="border-black font-semibold tactile-pop">Live Feed</Button>
         </div>
       </AnimatedSection>
 
@@ -132,18 +132,18 @@ export default function BlogPage() {
          <div className="editorial-container grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-20 md:gap-32 items-center">
             <div className="space-y-12">
                <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sun">Weekly Briefing</div>
-               <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase text-balance">Intake <br /><span className="text-sun font-playful lowercase tracking-normal italic">intelligence.</span></h2>
+               <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase text-balance">Intake <br /><span className="text-sun font-playful lowercase tracking-normal italic wavy-underline">intelligence.</span></h2>
                <p className="text-xl md:text-2xl font-light leading-relaxed text-muted-foreground text-balance">
-                 Subscribe to our research digest and receive monthly updates on digital literacy and scientific education trends.
+                 Subscribe to our research digest and receive monthly updates on digital literacy and scientific education <span className="wavy-underline text-black">trends.</span>
                </p>
             </div>
             
-            <form className="bg-black p-10 md:p-16 space-y-12 text-white shadow-2xl shadow-sun/5">
+            <form className="bg-black p-10 md:p-16 space-y-12 text-white shadow-2xl shadow-sun/5 rounded-[2rem] overflow-hidden">
                <div className="space-y-4">
                   <label className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sun">Protocol: Subscriber_Input</label>
                   <input placeholder="ENTER EMAIL ADDRESS" className="w-full bg-transparent border-b-2 border-white/10 py-6 text-xl md:text-2xl font-semibold tracking-tighter uppercase outline-none focus:border-sun transition-colors placeholder:text-white/10" />
                </div>
-               <Button variant="sun" size="xl" className="w-full font-semibold shadow-xl shadow-sun/10 transition-all hover:scale-[1.02]">Initialize Briefing</Button>
+               <Button variant="sun" size="xl" className="w-full font-semibold shadow-xl shadow-sun/10 transition-all hover:scale-[1.02] tactile-pop">Initialize Briefing</Button>
             </form>
          </div>
       </AnimatedSection>

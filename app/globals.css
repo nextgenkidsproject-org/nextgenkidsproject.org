@@ -40,6 +40,9 @@
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-playful: 'Dancing Script', cursive;
+
+  /* Experimental Depth */
+  --noise-opacity: 0.05;
 }
 
 @layer base {
@@ -54,6 +57,23 @@
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Paper Noise Texture Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
   }
 
   h1,
@@ -74,6 +94,8 @@
   /* Editorial Container */
   .editorial-container {
     @apply max-w-7xl mx-auto px-6 md:px-12;
+    position: relative;
+    z-index: 10;
   }
 
   /* Typography Hierarchy */
@@ -136,11 +158,38 @@
   .editorial-border {
     border: 1px solid rgba(0, 0, 0, 0.05);
   }
+
+  /* Experimental Playful Utilities */
+  .wavy-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .wavy-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='12' viewBox='0 0 52 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 10C5.16667 10 9.33333 1 13.5 1C17.6667 1 21.8333 10 26 10C30.1667 10 34.3333 1 38.5 1C42.6667 1 46.8333 10 51 10' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: 26px 6px;
+    background-repeat: repeat-x;
+    opacity: 0.6;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .floating-shape {
+    pointer-events: none;
+    user-select: none;
+    filter: blur(60px);
+    will-change: transform;
+    opacity: 0.4;
   }
 }
 

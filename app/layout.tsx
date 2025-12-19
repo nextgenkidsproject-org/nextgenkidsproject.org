@@ -7,6 +7,7 @@ import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { cn } from "./lib/utils";
 import { Footer } from "./components/layout/Footer";
 import { Navbar } from "./components/layout/Navbar";
+import { BackgroundEffects } from "./components/ui/BackgroundEffects";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
         <StoreProvider>
           <UIProvider>
             <LoadingScreen />
+            <BackgroundEffects />
             <div className="flex flex-col min-h-screen relative z-10">
               <Navbar />
               <main className="flex-grow">

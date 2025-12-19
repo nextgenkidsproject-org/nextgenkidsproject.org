@@ -6,22 +6,23 @@ import { Card } from '@/components/ui/Card';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { ArrowRight, Globe2, BookOpen, ShieldCheck, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function Home() {
   const heroSlides = [
     {
-      image: "HOMEPAGE_HERO_1",
+      image: "/assets/images/istockphoto-2152266807-2048x2048.webp",
       title: "Shaping the Scientific Hub.",
       subtitle: "The Future of Digital Literacy"
     },
     {
-      image: "HOMEPAGE_HERO_2",
+      image: "/assets/images/photo-1560253023-3ec5d502959f.jpeg",
       title: "Inquiry Led Discovery.",
       subtitle: "Cybersecurity for Every Classroom"
     },
     {
-      image: "HOMEPAGE_HERO_3",
+      image: "/assets/images/photo-1576633587382-13ddf37b1fc1.avif",
       title: "Building Digital Sanctuary.",
       subtitle: "Safety First, Education Always"
     }
@@ -79,9 +80,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-b border-black/10 pb-20">
              <div className="max-w-2xl space-y-8 text-balance">
                 <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">Strategic Pillars</div>
-                <h2 className="text-4xl md:text-7xl font-semibold tracking-tighter uppercase">Pathways to <span className="text-leaf">Discovery.</span></h2>
+                <h2 className="text-4xl md:text-7xl font-semibold tracking-tighter uppercase leading-[0.95]">
+                  Pathways to <span className="wavy-underline text-leaf">Discovery.</span>
+                </h2>
              </div>
-             <Button variant="link" className="text-highlight font-semibold p-0 h-auto">Explore Full Registry</Button>
+             <Button variant="link" className="text-highlight font-semibold p-0 h-auto tactile-pop">Explore Full Registry</Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -144,13 +147,19 @@ export default function Home() {
       </AnimatedSection>
 
       {/* 3. NEW SECTION: Technical Excellence */}
-      <AnimatedSection className="bg-black text-white py-32 md:py-48">
+      <AnimatedSection className="bg-black text-white py-32 md:py-48 overflow-hidden relative">
+        <div className="absolute top-0 right-0 opacity-10 blur-xl">
+           <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="150" stroke="white" strokeWidth="2" strokeDasharray="20 20" />
+           </svg>
+        </div>
+
         <div className="editorial-container grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32 items-center">
            <div className="space-y-12">
               <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sun">Operational Excellence</div>
-              <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase">Technically <br /><span className="text-sun font-playful lowercase tracking-normal italic">superior.</span></h2>
+              <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase">Technically <br /><span className="text-sun font-playful lowercase tracking-normal italic wavy-underline">superior.</span></h2>
               <p className="text-xl md:text-2xl font-light opacity-60 leading-relaxed text-balance">
-                Our infrastructure is built on the same principles we teach: security, efficiency, and clarity.
+                Our infrastructure is built on the same principles we teach: <span className="wavy-underline text-white/80">security</span>, efficiency, and clarity.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
                  <div className="space-y-4">
@@ -165,9 +174,16 @@ export default function Home() {
                  </div>
               </div>
            </div>
-           <div className="relative aspect-video lg:aspect-square bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
-              <div className="text-[30vw] font-semibold opacity-5 leading-none select-none text-sun">V4.0</div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+           <div className="relative aspect-video lg:aspect-square bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden rounded-[2rem]">
+              <motion.div 
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 0.15 }}
+                transition={{ duration: 2 }}
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
+                style={{ backgroundImage: `url('/assets/images/istockphoto-2152266807-2048x2048.webp')` }}
+              />
+              <div className="text-[30vw] font-semibold opacity-5 leading-none select-none text-sun relative z-10">V4.0</div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 z-20">
                  <div className="text-[10px] font-semibold uppercase tracking-[0.8em] text-sun">Protocol Active</div>
                  <Globe2 className="w-12 h-12 text-white animate-pulse" />
               </div>
@@ -183,7 +199,7 @@ export default function Home() {
                 The Philosophy <span className="font-playful normal-case text-2xl tracking-normal ml-4">Defined</span>
               </div>
               <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase text-balance">
-                Creating <span className="text-highlight">Safe Spaces</span> for <span className="text-sky font-playful lowercase tracking-normal italic">bold minds.</span>
+                Creating <span className="text-highlight wavy-underline">Safe Spaces</span> for <span className="text-sky font-playful lowercase tracking-normal italic wavy-underline">bold minds.</span>
               </h2>
            </div>
            <div className="space-y-8">
@@ -214,18 +230,18 @@ export default function Home() {
            <div className="max-w-3xl space-y-8 md:space-y-12">
               <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">Navigation Atlas</div>
               <h2 className="text-5xl md:text-8xl font-semibold leading-[0.9] tracking-tighter uppercase">
-                Explore the <br /><span className="text-sky font-playful lowercase tracking-normal italic">ecosystem.</span>
+                Explore the <br /><span className="text-sky font-playful lowercase tracking-normal italic wavy-underline">ecosystem.</span>
               </h2>
               <p className="text-lg md:text-2xl font-light leading-relaxed text-muted-foreground">
-                A unified gateway to every scientific and architectural pillar of the NextGen Kids platform.
+                A unified gateway to every scientific and architectural <span className="wavy-underline text-black">pillar</span> of the NextGen Kids platform.
               </p>
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {sitePillars.map((pillar, i) => (
-                <Link key={i} href={pillar.href} className="group block h-full">
+                <Link key={i} href={pillar.href} className="group block h-full tactile-pop">
                   <div className={cn(
-                    "h-full p-10 md:p-12 border transition-all duration-700 flex flex-col justify-between space-y-12 min-h-[300px]",
+                    "h-full p-10 md:p-12 border transition-all duration-700 flex flex-col justify-between space-y-12 min-h-[300px] rounded-[1.5rem] md:rounded-[2rem]",
                     pillar.highlight ? cn(pillar.hoverBg.replace('hover:', ''), "text-white hover:bg-black") : cn("bg-white border-black/5 hover:text-white", pillar.hoverBg)
                   )}>
                     <div className="flex justify-between items-start">
@@ -254,7 +270,7 @@ export default function Home() {
          <div className="editorial-container text-center space-y-12 md:space-y-20">
             <h2 className="text-5xl md:text-9xl font-semibold leading-[0.85] tracking-tighter uppercase text-balance">
               Ready to Shape <br />
-              <span className="text-sun font-playful lowercase tracking-normal italic">the future?</span>
+              <span className="text-sun font-playful lowercase tracking-normal italic wavy-underline">the future?</span>
             </h2>
             <p className="text-lg md:text-3xl max-w-2xl mx-auto font-light opacity-60 text-balance">
               Join educators and parents globally in nurturing the scientists of tomorrow.
