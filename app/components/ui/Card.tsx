@@ -71,14 +71,12 @@ export const Card = ({
       transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
       whileHover={{ y: -5 }}
       className={cn(
-        'p-8 md:p-12 overflow-hidden relative flex flex-col h-full rounded-2xl md:rounded-[2rem] group',
+        'p-10 md:p-14 overflow-hidden relative flex flex-col h-full rounded-[2.5rem] group',
         'transition-all duration-700 ease-in-out',
-        'shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)]',
+        'border border-black/5 bg-white',
         className
       )}
     >
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/20 pointer-events-none" />
-      
       <div className="relative z-10 flex flex-col h-full">
         {children}
       </div>

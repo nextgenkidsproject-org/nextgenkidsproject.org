@@ -5,7 +5,7 @@ import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends HTMLMotionProps<'button'> {
-  variant?: 'primary' | 'outline' | 'ghost' | 'accent' | 'link' | 'highlight' | 'sky' | 'leaf' | 'sun';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent' | 'link' | 'highlight';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   children: React.ReactNode;
 }
@@ -18,22 +18,20 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const variants = {
-    primary: 'bg-black text-white hover:bg-neutral-800',
-    accent: 'bg-blue-600 text-white hover:bg-blue-700',
-    highlight: 'bg-highlight text-white hover:shadow-[0_8px_20px_-4px_rgba(230,96,0,0.4)]',
-    sky: 'bg-sky text-white hover:shadow-[0_8px_20px_-4px_rgba(0,127,255,0.4)]',
-    leaf: 'bg-leaf text-white hover:shadow-[0_8px_20px_-4px_rgba(0,204,119,0.4)]',
-    sun: 'bg-sun text-black hover:shadow-[0_8px_20px_-4px_rgba(255,210,0,0.4)]',
-    outline: 'bg-transparent border-2 border-black text-black hover:bg-black hover:text-white',
-    ghost: 'bg-transparent text-black hover:bg-neutral-100',
-    link: 'bg-transparent text-black underline underline-offset-8 hover:opacity-70 p-0 h-auto font-medium',
+    primary: 'bg-secondary text-white hover:bg-secondary/90 transition-all duration-300',
+    secondary: 'bg-accent text-white hover:bg-accent/90 transition-all duration-300',
+    accent: 'bg-accent text-white hover:bg-accent/90',
+    highlight: 'bg-secondary text-white hover:bg-secondary/90',
+    outline: 'bg-transparent border border-white/20 text-white hover:border-white hover:bg-white/5',
+    ghost: 'bg-transparent text-white hover:bg-white/5',
+    link: 'bg-transparent text-secondary underline underline-offset-4 hover:opacity-70 p-0 h-auto font-bold',
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-lg',
-    md: 'px-8 py-4 text-sm font-semibold uppercase tracking-widest rounded-xl',
-    lg: 'px-12 py-5 text-base font-semibold uppercase tracking-widest rounded-2xl md:rounded-[1.5rem]',
-    xl: 'px-16 py-6 text-xl font-semibold uppercase tracking-widest rounded-3xl md:rounded-[2.5rem]',
+    sm: 'px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg',
+    md: 'px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] rounded-xl',
+    lg: 'px-10 py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-2xl',
+    xl: 'px-14 py-5 text-base font-bold uppercase tracking-[0.2em] rounded-[2rem]',
   };
 
   return (

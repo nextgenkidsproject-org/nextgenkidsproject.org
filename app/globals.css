@@ -1,181 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600&family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  /* Editorial Color Palette: High Contrast */
-  --color-background: #ffffff;
-  --color-foreground: #000000;
+  /* Galactic Color Palette */
+  --color-primary: #0A1931;
+  /* Night Blue */
+  --color-secondary: #7A49FF;
+  /* Energetic Violet */
+  --color-accent: #FF7A49;
+  /* Bright Orange */
 
-  --color-primary: #000000;
-  --color-secondary: #f5f5f7;
+  --color-neutral-light: #F0F0F0;
+  /* Space White */
+  --color-neutral-dark: #333333;
+  /* Cosmos Gray */
 
-  --color-accent: #0070f3;
-  --color-accent-foreground: #ffffff;
+  /* Compatibility / Shadcn Aliases */
+  --color-muted: var(--color-neutral-light);
+  --color-muted-foreground: var(--color-neutral-dark);
 
-  /* Expanded Highlight System (Saturated for better contrast) */
-  --color-highlight: #E66000;
-  /* More saturated Burned Orange */
-  --color-sky: #007FFF;
-  /* More saturated Sky Blue */
-  --color-leaf: #00CC77;
-  /* More saturated Leaf Green */
-  --color-sun: #FFD200;
-  /* More saturated Sunshine Yellow */
-
-  --color-highlight-soft: rgba(230, 96, 0, 0.08);
-  --color-sky-soft: rgba(0, 127, 255, 0.08);
-  --color-leaf-soft: rgba(0, 204, 119, 0.08);
-  --color-sun-soft: rgba(255, 210, 0, 0.12);
-
-  --color-muted: #f5f5f7;
-  --color-muted-foreground: #6e6e73;
-
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-input: rgba(0, 0, 0, 0.08);
-
-  --radius-none: 0px;
-
-  /* Typography Stacks */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-playful: 'Dancing Script', cursive;
-
-  /* Experimental Depth */
-  --noise-opacity: 0.05;
-}
-
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-body);
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Paper Noise Texture Overlay */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: var(--noise-opacity);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--color-foreground);
-  }
+  /* Galactic Utilities */
+  --animate-fade-up: fadeUp 0.5s ease-out forwards;
 }
 
 @layer components {
-
-  /* Editorial Container */
   .editorial-container {
     @apply max-w-7xl mx-auto px-6 md:px-12;
     position: relative;
     z-index: 10;
   }
 
-  /* Typography Hierarchy */
-  .heading-hero {
-    @apply text-6xl md:text-8xl font-semibold leading-[0.95] tracking-tighter uppercase;
-  }
-
-  .heading-section {
-    @apply text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight;
-  }
-
-  .text-body-large {
-    @apply text-xl md:text-2xl font-light leading-relaxed text-muted-foreground;
-  }
-
-  /* Playful Script Utility */
-  .font-playful {
-    font-family: var(--font-playful);
-  }
-
-  /* Color Utilities */
-  .text-highlight {
-    color: var(--color-highlight);
-  }
-
-  .text-sky {
-    color: var(--color-sky);
-  }
-
-  .text-leaf {
-    color: var(--color-leaf);
-  }
-
-  .text-sun {
-    color: var(--color-sun);
-  }
-
-  .bg-highlight {
-    background-color: var(--color-highlight);
-  }
-
-  .bg-sky {
-    background-color: var(--color-sky);
-  }
-
-  .bg-leaf {
-    background-color: var(--color-leaf);
-  }
-
-  .bg-sun {
-    background-color: var(--color-sun);
-  }
-
-  /* Layout Spacing */
-  .section-padding {
-    @apply py-24 md:py-40;
-  }
-
-  /* Minimalist Borders (No Shadows by default, but we'll use them for emphasis) */
-  .editorial-border {
-    border: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  /* Experimental Playful Utilities */
-  .wavy-underline {
-    position: relative;
-    display: inline-block;
-  }
-
-  .wavy-underline::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 8px;
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='12' viewBox='0 0 52 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 10C5.16667 10 9.33333 1 13.5 1C17.6667 1 21.8333 10 26 10C30.1667 10 34.3333 1 38.5 1C42.6667 1 46.8333 10 51 10' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-size: 26px 6px;
-    background-repeat: repeat-x;
-    opacity: 0.6;
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
