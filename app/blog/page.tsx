@@ -144,7 +144,7 @@ export default function BlogPage() {
                   <label className="text-[10px] font-semibold uppercase tracking-[0.4em] text-sun">Protocol: Subscriber_Input</label>
                   <input placeholder="ENTER EMAIL ADDRESS" className="w-full bg-transparent border-b-2 border-white/10 py-6 text-xl md:text-2xl font-semibold tracking-tighter uppercase outline-none focus:border-sun transition-colors placeholder:text-white/10" />
                </div>
-               <Button variant="sun" size="xl" className="w-full font-semibold shadow-xl shadow-sun/10 transition-all hover:scale-[1.02] tactile-pop">Initialize Briefing</Button>
+               <Button variant="primary" size="xl" className="w-full font-semibold shadow-xl shadow-sun/10 transition-all hover:scale-[1.02] tactile-pop">Initialize Briefing</Button>
             </form>
          </div>
       </AnimatedSection>

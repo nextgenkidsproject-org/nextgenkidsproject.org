@@ -172,7 +172,7 @@ export default function ProgramsPage() {
       <AnimatedSection className="bg-white">
          <div className="editorial-container bg-black text-white p-12 md:p-24 flex flex-col md:flex-row justify-between items-center gap-12 rounded-[2rem] md:rounded-[3rem] overflow-hidden">
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tighter uppercase text-center md:text-left text-balance">Access the <span className="text-sun font-playful lowercase tracking-normal italic wavy-underline">Digital Library.</span></h2>
-            <Button variant="sun" size="lg" className="w-full md:w-auto flex items-center gap-4 shadow-xl shadow-sun/10 tactile-pop">Browse Resources <ArrowRight className="w-5 h-5" /></Button>
+            <Button variant="primary" size="lg" className="w-full md:w-auto flex items-center gap-4 shadow-xl shadow-sun/10 tactile-pop">Browse Resources <ArrowRight className="w-5 h-5" /></Button>
          </div>
       </AnimatedSection>
     </div>
