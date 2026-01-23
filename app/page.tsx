@@ -3,13 +3,13 @@
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { ArrowRight, Shield, BookOpen, Users, Rocket, Star, Globe, Zap, Sparkles } from 'lucide-react';
+import { ArrowRight, Shield, BookOpen, Users, Rocket, Star, Globe, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
+
   const [mascotIndex, setMascotIndex] = useState(0);
 
   useEffect(() => {
@@ -19,12 +19,11 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden pt-20">
       
-      {/* 1. HERO SECTION */}
       <section className="relative flex items-center overflow-hidden bg-primary px-6 md:px-12 py-24 md:py-32">
-        {/* Subtle Background Parallax Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <motion.div 
             animate={{ 
@@ -66,10 +65,10 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-4">
-              <Button size="xl" variant="primary" className="rounded-full px-16">
+              <Button size="xl" variant="secondary" className="rounded-full px-16">
                 Start Mission
               </Button>
-              <Button size="xl" variant="outline" className="rounded-full px-16">
+              <Button size="xl" variant="outline" className="rounded-full px-16 border-white/20 text-white hover:bg-white hover:text-primary">
                 Our Story
               </Button>
             </div>
@@ -113,14 +112,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. MISSION SECTION - OUR PERSPECTIVE */}
       <AnimatedSection className="bg-white text-primary py-24">
          <div className="editorial-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                <div className="space-y-8 lg:pr-12">
                   <div className="text-[10px] font-bold uppercase tracking-[0.5em] text-secondary">Our Perspective</div>
                   <h2 className="text-5xl md:text-6xl font-heading font-black text-primary leading-[1.1] tracking-tighter">
-                    Empowering Africa's <br/> <span className="text-secondary opacity-80 italic">Digital Frontier.</span>
+                    Empowering Africa&apos;s <br/> <span className="text-secondary opacity-80 italic">Digital Frontier.</span>
                   </h2>
                   <p className="text-xl text-neutral-dark/40 leading-relaxed max-w-xl font-body">
                     We bridge the gap between curiosity and capability, bringing high-tech STEM education and cybersecurity kits to the next generation of innovators.
@@ -158,7 +156,6 @@ export default function Home() {
          </div>
       </AnimatedSection>
 
-      {/* 3. PORTALS SECTION */}
       <AnimatedSection className="bg-neutral-light/20 py-24">
          <div className="editorial-container space-y-20">
             <div className="text-center space-y-6 max-w-3xl mx-auto">
@@ -168,7 +165,6 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-               {/* Children's Portal */}
                <Card className="hover:border-secondary/30 transition-all duration-700">
                   <div className="w-20 h-20 rounded-[1.75rem] bg-secondary/10 flex items-center justify-center text-secondary mb-10 group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                     <Rocket className="w-10 h-10" />
@@ -180,7 +176,6 @@ export default function Home() {
                   <Button variant="primary" className="mt-auto w-full lg:w-fit px-12">Start Now</Button>
                </Card>
 
-               {/* Educators Portal */}
                <Card className="hover:border-accent/30 transition-all duration-700">
                   <div className="w-20 h-20 rounded-[1.75rem] bg-accent/10 flex items-center justify-center text-accent mb-10 group-hover:bg-accent group-hover:text-white transition-all duration-500">
                     <BookOpen className="w-10 h-10" />
@@ -192,7 +187,6 @@ export default function Home() {
                   <Button variant="secondary" className="mt-auto w-full lg:w-fit px-12">Get Tools</Button>
                </Card>
 
-               {/* Partners Portal */}
                <Card className="hover:border-primary/30 transition-all duration-700">
                   <div className="w-20 h-20 rounded-[1.75rem] bg-primary/10 flex items-center justify-center text-primary mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                     <Shield className="w-10 h-10" />
@@ -207,12 +201,10 @@ export default function Home() {
          </div>
       </AnimatedSection>
 
-      {/* 5. CALL TO ACTION SECTION */}
       <section className="relative bg-primary pt-32 pb-24 overflow-visible mt-40">
         <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
         
         <div className="editorial-container relative">
-          {/* Overflowing Mascot */}
           <motion.div 
             initial={{ y: 0 }}
             animate={{ y: [-10, 10, -10] }}
@@ -235,12 +227,12 @@ export default function Home() {
                   <span className="text-secondary italic">The Future?</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-white/40 font-body max-w-xl leading-relaxed">
-                  Whether you're a parent, educator, or partner, there's a place for you in our galactic mission to empower Africa's children.
+                  Whether you&apos;re a parent, educator, or partner, there&apos;s a place for you in our galactic mission to empower Africa&apos;s children.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-6">
-                <Button size="xl" variant="primary" className="rounded-full px-16 group">
+                <Button size="xl" variant="secondary" className="rounded-full px-16 group">
                   Join Community <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Button>
                 <Button size="xl" variant="outline" className="rounded-full px-16 border-white/20 text-white hover:bg-white hover:text-primary">
@@ -251,11 +243,9 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Subtle ground shadow for overflowing mascot */}
         <div className="absolute top-0 right-32 w-64 h-8 bg-black/20 blur-3xl rounded-full" />
       </section>
 
-      {/* 4. DYNAMIC TESTIMONIALS SECTION */}
       <AnimatedSection className="bg-white py-24 overflow-hidden">
          <div className="editorial-container space-y-20">
             <div className="text-center space-y-8 max-w-3xl mx-auto mb-16">
@@ -288,7 +278,7 @@ export default function Home() {
                       {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-accent" />)}
                     </div>
                     <p className="text-2xl font-body italic text-neutral-dark/80 leading-relaxed">
-                      "{item.text}"
+                      &quot;{item.text}&quot;
                     </p>
                     <div className="flex items-center gap-6 pt-6">
                       <div className="w-16 h-16 rounded-full bg-secondary/10 border border-secondary/10 flex items-center justify-center text-secondary">

@@ -18,20 +18,20 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const variants = {
-    primary: 'bg-secondary text-white hover:bg-secondary/90 transition-all duration-300',
-    secondary: 'bg-accent text-white hover:bg-accent/90 transition-all duration-300',
-    accent: 'bg-accent text-white hover:bg-accent/90',
-    highlight: 'bg-secondary text-white hover:bg-secondary/90',
-    outline: 'bg-transparent border border-white/20 text-white hover:border-white hover:bg-white/5',
-    ghost: 'bg-transparent text-white hover:bg-white/5',
+    primary: 'bg-primary text-white hover:bg-black transition-all duration-300 shadow-lg shadow-primary/20',
+    secondary: 'bg-secondary text-white hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20',
+    accent: 'bg-accent text-white hover:bg-accent/90 transition-all duration-300 shadow-lg shadow-accent/20',
+    highlight: 'bg-secondary text-white hover:bg-secondary/90 shadow-lg shadow-secondary/20',
+    outline: 'bg-transparent border border-black/10 text-primary hover:border-primary hover:bg-primary/5',
+    ghost: 'bg-transparent text-primary hover:bg-primary/5',
     link: 'bg-transparent text-secondary underline underline-offset-4 hover:opacity-70 p-0 h-auto font-bold',
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg',
-    md: 'px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] rounded-xl',
-    lg: 'px-10 py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-2xl',
-    xl: 'px-14 py-5 text-base font-bold uppercase tracking-[0.2em] rounded-[2rem]',
+    sm: 'px-5 py-2.5 text-[9px] font-bold uppercase tracking-[0.3em] rounded-full',
+    md: 'px-8 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] rounded-full',
+    lg: 'px-12 py-4.5 text-[11px] font-bold uppercase tracking-[0.3em] rounded-full',
+    xl: 'px-16 py-5.5 text-[12px] font-bold uppercase tracking-[0.3em] rounded-full',
   };
 
   return (

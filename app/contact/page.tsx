@@ -1,97 +1,153 @@
 'use client';
 
 import { PageHero } from "@/components/ui/PageHero";
-import { Card } from "@/components/ui/Card";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
-import { Mail, MapPin, Phone, ArrowRight, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight, MessageSquare, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden pt-20">
+      {/* Hero Section */}
       <PageHero 
-        chapter="Chapter Six: Join the Hub"
-        title="Let's Build the <span class='text-sky font-playful lowercase tracking-normal italic wavy-underline'>Blueprint.</span>"
-        subtitle="Have a question about our research, institutional licensing, or interested in bringing our curriculum to your school?"
+        chapter="Contact Us"
+        title="We're Listening. <span class='text-secondary italic'>Reach Out.</span>"
+        subtitle="Whether you have a question about our programs, want to partner, or just want to say hello, we're here."
         image="/assets/images/photo-1576633587382-13ddf37b1fc1.avif"
+        accentColor="secondary"
       />
 
-      <AnimatedSection className="bg-white">
-        <div className="editorial-container grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-20 md:gap-32 items-start">
-           <div className="space-y-16 md:space-y-20">
-              <div className="space-y-8">
-                 <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">Communication Protocol</div>
-                 <h2 className="text-4xl md:text-7xl font-semibold tracking-tighter uppercase leading-[0.9] text-balance">Submit a <br /><span className="text-highlight font-playful lowercase tracking-normal italic wavy-underline">Pathway Inquiry.</span></h2>
+      {/* Hero Mascot with Message Icon */}
+      <div className="absolute top-[35%] right-[5%] w-[180px] md:w-[300px] z-20 pointer-events-none select-none hidden lg:block">
+        <motion.div
+           animate={{ y: [0, -20, 0] }}
+           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+           className="relative"
+        >
+          <img 
+            src="/assets/mascot/mascot2.png" // Mascot 2 is good for 'friendly/waving'
+            alt="Hello Mascot"
+             className="w-full h-auto drop-shadow-[0_30px_60px_rgba(122,73,255,0.25)]"
+          />
+          {/* Message Icon Overlay */}
+          <div className="absolute top-0 -left-12 bg-white p-4 rounded-2xl shadow-xl rotate-[-10deg]">
+             <Mail className="w-8 h-8 text-secondary" />
+          </div>
+        </motion.div>
+      </div>
+
+      <AnimatedSection className="bg-white py-24">
+        <div className="editorial-container grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-24 items-start">
+           
+           {/* Contact Form Section */}
+           <div className="space-y-12">
+              <div className="space-y-6">
+                 <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tighter uppercase text-primary">
+                    Send a <span className="text-secondary italic">Message.</span>
+                 </h2>
+                 <p className="text-xl text-neutral-dark/60">Fill out the form below and our team will get back to you within 24 hours.</p>
               </div>
               
-              {/* Well-Defined Form Section */}
-              <div className="bg-neutral-50/50 p-8 md:p-12 lg:p-16 border border-black/5 editorial-border shadow-2xl shadow-black/5 rounded-[2rem] overflow-hidden">
-                <form className="space-y-12">
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
-                      <div className="space-y-4">
-                         <label className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Identifier: Full_Name</label>
-                         <input className="w-full py-4 md:py-6 text-xl bg-transparent border-b-2 border-black/5 outline-none focus:border-highlight transition-all placeholder:opacity-10 uppercase tracking-tighter" placeholder="NAME / INSTITUTION" />
+              <div className="bg-neutral-light/20 p-8 md:p-12 lg:p-16 border border-black/5 rounded-[3rem] shadow-xl shadow-black/5 relative overflow-hidden">
+                <form className="space-y-8 relative z-10">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                         <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Full Name</label>
+                         <input className="w-full py-4 text-lg bg-white border border-black/5 rounded-xl px-6 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-bold tracking-tight text-primary" placeholder="Enter your name" />
                       </div>
-                      <div className="space-y-4">
-                         <label className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Identifier: Digital_Address</label>
-                         <input className="w-full py-4 md:py-6 text-xl bg-transparent border-b-2 border-black/5 outline-none focus:border-highlight transition-all placeholder:opacity-10 uppercase tracking-tighter" placeholder="EMAIL@DOMAIN.COM" />
+                      <div className="space-y-3">
+                         <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Email Address</label>
+                         <input className="w-full py-4 text-lg bg-white border border-black/5 rounded-xl px-6 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-bold tracking-tight text-primary" placeholder="name@example.com" />
                       </div>
                    </div>
                    
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Protocol: Inquiry_Scope</label>
-                      <select className="w-full py-4 md:py-6 text-xl bg-transparent border-b-2 border-black/5 outline-none focus:border-highlight transition-all uppercase tracking-tighter appearance-none cursor-pointer">
-                         <option>Select Inquiry Type</option>
-                         <option>Institutional Partnership</option>
-                         <option>Research Collaboration</option>
-                         <option>Media & Press</option>
-                         <option>General Support</option>
+                   <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Subject</label>
+                      <select className="w-full py-4 text-lg bg-white border border-black/5 rounded-xl px-6 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-bold tracking-tight text-primary appearance-none cursor-pointer">
+                         <option>General Inquiry</option>
+                         <option>Programs & Workshops</option>
+                         <option>Partnerships</option>
+                         <option>Support</option>
                       </select>
                    </div>
 
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Protocol: Transmission_Data</label>
-                      <textarea rows={4} className="w-full py-4 md:py-6 text-xl bg-transparent border-b-2 border-black/5 outline-none focus:border-highlight transition-all placeholder:opacity-10 uppercase tracking-tighter resize-none" placeholder="DESCRIBE YOUR VISION..." />
+                   <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Message</label>
+                      <textarea rows={5} className="w-full py-4 text-lg bg-white border border-black/5 rounded-xl px-6 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-bold tracking-tight text-primary resize-none subheading-relaxed" placeholder="How can we help you?" />
                    </div>
 
-                   <Button variant="highlight" size="xl" className="w-full py-8 md:py-10 flex items-center justify-center gap-6 font-semibold shadow-xl shadow-highlight/10 tactile-pop">Initialize Communication <ArrowRight className="w-6 h-6" /></Button>
+                   <Button variant="secondary" size="xl" className="w-full rounded-xl flex items-center justify-center gap-4 font-bold shadow-xl shadow-secondary/10 group">
+                      Send Message <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                   </Button>
                 </form>
+
+                {/* Subtle Mascot Feedback (Visual Decoration for now) */}
+                <div className="absolute bottom-4 right-4 opacity-10 pointer-events-none">
+                    <img src="/assets/mascot/mascot-head.png" alt="Feedback" className="w-24 h-24 rotate-12" />
+                </div>
               </div>
            </div>
 
-           {/* Contact Sidebar */}
-           <div className="space-y-16 md:space-y-20 lg:pl-16 lg:border-l border-black/5">
-              <div className="space-y-12">
-                 <div className="text-[10px] font-semibold uppercase tracking-[0.4em] text-highlight">Direct Access</div>
-                 <div className="grid grid-cols-1 gap-8">
-                    {[
-                       { icon: <Mail className="w-5 h-5" />, label: "Email", value: "hello@nextgenkids.org", color: "text-sky", highlight: true },
-                       { icon: <Phone className="w-5 h-5" />, label: "Global", value: "+237 000 000 000", color: "text-leaf" },
-                       { icon: <MapPin className="w-5 h-5" />, label: "HQ", value: "Douala, Cameroon", color: "text-sun" }
-                    ].map((item, i) => (
-                      <div key={i} className={cn(
-                        "flex items-center gap-6 md:gap-8 p-6 transition-all duration-500 border border-black/5 rounded-2xl hover:border-transparent group cursor-pointer",
-                        item.highlight ? "bg-white shadow-xl shadow-black/5 ring-1 ring-sky/10" : "bg-neutral-50/50 hover:bg-black hover:text-white"
-                      )}>
-                         <div className={cn("p-4 bg-white border border-black/5 transition-all shadow-sm shrink-0 rounded-xl", `group-hover:${item.color.replace('text-', 'bg-')}`)}>
-                            <div className="group-hover:text-white transition-colors">{item.icon}</div>
-                         </div>
-                         <div className="space-y-1 min-w-0 overflow-hidden">
-                            <div className={cn("text-[10px] font-semibold uppercase tracking-widest opacity-40 group-hover:text-white/60", item.color)}>{item.label}</div>
-                            <div className="font-semibold text-base md:text-lg tracking-tighter truncate">{item.value}</div>
-                         </div>
-                      </div>
-                    ))}
+           {/* Sidebar: Map & Socials */}
+           <div className="space-y-12">
+              {/* Map Placeholder */}
+              <div className="bg-neutral-100 rounded-[2.5rem] overflow-hidden min-h-[300px] relative border border-black/5">
+                 <div className="absolute inset-0 bg-neutral-200 flex items-center justify-center">
+                    <MapPin className="w-12 h-12 text-neutral-400" />
+                    <span className="ml-2 text-neutral-500 font-bold uppercase tracking-widest text-xs">Map Loading...</span>
+                 </div>
+                 {/* Address Overlay */}
+                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-black/5">
+                    <div className="flex gap-4 items-start">
+                       <MapPin className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                       <div>
+                          <div className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40 mb-1">Headquarters</div>
+                          <p className="font-bold text-primary leading-tight">123 Innovation Drive,<br />Douala, Cameroon</p>
+                       </div>
+                    </div>
                  </div>
               </div>
 
-              <div className="p-10 md:p-12 bg-neutral-900 text-white space-y-8 relative overflow-hidden group rounded-[2rem]">
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-sun/10 rounded-full -mr-16 -mt-16 blur-3xl" />
-                 <MessageSquare className="w-10 h-10 text-sun relative z-10" />
-                 <h3 className="text-2xl md:text-3xl font-semibold uppercase tracking-tighter text-balance text-white relative z-10">Live <span className="wavy-underline">Support</span> Protocol.</h3>
-                 <p className="text-sm opacity-60 leading-relaxed font-light text-balance relative z-10">For immediate technical assistance during school hours, please use our secure faculty portal.</p>
-                 <Button variant="outline" className="w-full border-white/20 text-white hover:bg-sun hover:border-sun hover:text-black font-semibold relative z-10 tactile-pop">Access Portal</Button>
+              {/* Contact Info */}
+              <div className="grid grid-cols-1 gap-4">
+                 <div className="flex items-center gap-6 p-6 bg-white border border-black/5 rounded-2xl hover:border-secondary/30 transition-all group cursor-pointer">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                       <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                       <div className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Email Us</div>
+                       <div className="font-bold text-lg text-primary">hello@nextgenkids.org</div>
+                    </div>
+                 </div>
+                 <div className="flex items-center gap-6 p-6 bg-white border border-black/5 rounded-2xl hover:border-accent/30 transition-all group cursor-pointer">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+                       <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                       <div className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/40">Call Us</div>
+                       <div className="font-bold text-lg text-primary">+237 000 000 000</div>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Socials with Mascot Pointing */}
+              <div className="relative pt-8">
+                 <div className="absolute -top-6 right-0 w-24 pointer-events-none">
+                    <img src="/assets/mascot/mascot5.png" alt="Social Mascot" className="w-full h-auto rotate-[-15deg]" />
+                 </div>
+                 <div className="p-8 bg-primary text-white rounded-[2.5rem] shadow-2xl shadow-primary/20 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl" />
+                    <h3 className="text-xl font-heading font-black uppercase tracking-tight mb-6 relative z-10">Connect Socially</h3>
+                    <div className="flex gap-4 relative z-10">
+                       {[1, 2, 3, 4].map((i) => (
+                          <div key={i} className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:scale-110 transition-all cursor-pointer">
+                             <span className="text-[10px] font-bold">SM</span>
+                          </div>
+                       ))}
+                    </div>
+                 </div>
               </div>
            </div>
         </div>
