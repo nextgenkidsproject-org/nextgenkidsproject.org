@@ -22,27 +22,13 @@ export default function AboutPage() {
         chapter="Chapter One: Our Roots"
         title="Born in Africa, Made for <span class='text-secondary italic'>Global Impact.</span>"
         subtitle="What started as a response to the digital divide in African communities has evolved into a global movement to prepare the youth for a scientific world."
-        image="/assets/images/premium_photo-1683138608820-3182ced664d5.jpeg"
+        image="/assets/mascot/mascot3.png"
         accentColor="secondary"
         ctaLabel="Discover Our Mission"
         ctaHref="#mission-section"
       />
 
-      <div className="absolute top-[45%] right-[5%] w-[350px] md:w-[450px] lg:w-[550px] z-20 pointer-events-none select-none hidden lg:block">
-        <motion.div
-           animate={{ y: [0, -30, 0] }}
-           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-           className="relative"
-        >
-          <img 
-            src="/assets/mascot/mascot1.png"
-            alt="Galactic Mascot"
-            className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
-          />
-          {/* Ground Shadow for Hero Mascot */}
-          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/30 blur-3xl rounded-full" />
-        </motion.div>
-      </div>
+
 
       <AnimatedSection id="mission-section" className="bg-white text-primary py-24">
         <div className="editorial-container">
@@ -174,13 +160,13 @@ export default function AboutPage() {
                   <Card className="group transition-all duration-700 h-full min-h-[450px] flex flex-col justify-between hover:border-secondary/30 hover:shadow-[0_20px_40px_-10px_rgba(122,73,255,0.2)] rounded-[3rem] border-black/5 bg-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-accent/10 transition-colors" />
                     
-                    {val.mascotPeek && (
+                    {/* {val.mascotPeek && (
                        <img 
                          src="/assets/mascot/mascot3.png" 
                          alt="Peeking Mascot"
                          className="absolute -right-12 -bottom-12 w-48 h-auto opacity-0 group-hover:opacity-100 group-hover:-right-4 group-hover:-bottom-4 transition-all duration-500 z-0"
                        />
-                    )}
+                    )} */}
 
                     <div className="flex justify-between items-start relative z-10">
                       <div className="text-[10px] font-bold uppercase tracking-widest text-neutral-dark/30">{val.label}</div>
@@ -237,7 +223,7 @@ export default function AboutPage() {
           >
             <img 
               src="/assets/mascot/mascot5.png"
-              className="w-full h-auto grayscale"
+              className="h-[200%] w-[200%] grayscale"
             />
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[60%] h-10 bg-black/10 blur-3xl rounded-full" />
           </motion.div>
@@ -245,12 +231,12 @@ export default function AboutPage() {
 
         <div className="editorial-container space-y-24 relative z-10">
           {/* Team Intro with Mascot Guide */}
-          <div className="flex items-end gap-6 mb-[-4rem]">
+          {/* <div className="flex items-end gap-6 mb-[-4rem]">
              <img src="/assets/mascot/mascot5.png" alt="Guide Mascot" className="w-16 h-16 object-contain hidden md:block" />
              <div className="bg-white/50 backdrop-blur-sm px-6 py-4 rounded-t-2xl rounded-br-2xl text-secondary text-[10px] font-bold uppercase tracking-widest border border-secondary/20 shadow-sm">
                Meet the Architects of the Future
              </div>
-          </div>
+          </div> */}
           <div className="max-w-3xl space-y-8">
             <div className="text-[10px] font-bold uppercase tracking-[0.5em] text-secondary">The Collective</div>
             <h2 className="text-5xl md:text-7xl font-heading font-black tracking-tighter leading-tight text-primary uppercase">

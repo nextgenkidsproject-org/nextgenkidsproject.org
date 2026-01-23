@@ -74,7 +74,7 @@ export default function ProjectsPage() {
         chapter="Our Initiatives"
         title="Impact in <span class='text-secondary italic'>Motion.</span>"
         subtitle="Exploring our diverse range of projects designed to empower the next generation of scientific minds."
-        image="/assets/images/photo-1576633587382-13ddf37b1fc1.avif"
+        image="/assets/mascot/mascot6.png"
         className="bg-neutral-50 text-primary border-b border-black/5"
         accentColor="secondary"
         ctaLabel="Browse Projects"

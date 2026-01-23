@@ -103,25 +103,11 @@ export default function ResourcesPage() {
         chapter="Knowledge Base"
         title="Tools for <span class='text-secondary italic'>Growth.</span>"
         subtitle="Curated blueprints, guides, and interactive tools to support the digital journey of every child, parent, and educator."
-        image="/assets/images/photo-1488521787991-ed7bbaae773c.jpeg"
+        image="/assets/mascot/mascot4.png"
         accentColor="secondary"
       />
 
-       {/* Floating Hero Mascot - Reading Pose */}
-       <div className="absolute top-[35%] left-[5%] w-[300px] md:w-[450px] z-20 pointer-events-none select-none hidden lg:block">
-        <motion.div
-           animate={{ y: [0, -25, 0], rotate: [0, 5, 0] }}
-           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-           className="relative"
-        >
-          <img 
-            src="/assets/mascot/mascot4.png"
-            alt="Reading Mascot"
-             className="w-full h-auto drop-shadow-[0_30px_60px_rgba(122,73,255,0.25)]"
-          />
-          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[60%] h-8 bg-black/10 blur-3xl rounded-full" />
-        </motion.div>
-      </div>
+
 
       {/* Sticky Filter Bar */}
       <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b border-black/5">

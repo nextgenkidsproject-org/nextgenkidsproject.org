@@ -50,7 +50,8 @@ export default function PartnershipsPage() {
         chapter="Join the Mission"
         title="Fuel the <span class='text-secondary italic'>Future.</span>"
         subtitle="Your support builds laboratories, trains educators, and ignites the spark of curiosity in thousands of children."
-        image="/assets/images/photo-1531482615713-2afd69097998.jpeg"
+        image="/assets/mascot/mascot2.png"
+        imagePosition="right"
         accentColor="secondary"
         ctaLabel="Donate Now"
         ctaHref="#donation-form"
@@ -111,7 +112,6 @@ export default function PartnershipsPage() {
         </div>
       </AnimatedSection>
 
-      {/* Donation Form Section */}
       <AnimatedSection id="donation-form" className="py-24 bg-neutral-light/20 border-y border-black/5">
          <div className="editorial-container">
             <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">

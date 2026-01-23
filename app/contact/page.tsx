@@ -15,28 +15,11 @@ export default function ContactPage() {
         chapter="Contact Us"
         title="We're Listening. <span class='text-secondary italic'>Reach Out.</span>"
         subtitle="Whether you have a question about our programs, want to partner, or just want to say hello, we're here."
-        image="/assets/images/photo-1576633587382-13ddf37b1fc1.avif"
+        image="/assets/mascot/mascot2.png"
         accentColor="secondary"
       />
 
-      {/* Hero Mascot with Message Icon */}
-      <div className="absolute top-[35%] right-[5%] w-[180px] md:w-[300px] z-20 pointer-events-none select-none hidden lg:block">
-        <motion.div
-           animate={{ y: [0, -20, 0] }}
-           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-           className="relative"
-        >
-          <img 
-            src="/assets/mascot/mascot2.png" // Mascot 2 is good for 'friendly/waving'
-            alt="Hello Mascot"
-             className="w-full h-auto drop-shadow-[0_30px_60px_rgba(122,73,255,0.25)]"
-          />
-          {/* Message Icon Overlay */}
-          <div className="absolute top-0 -left-12 bg-white p-4 rounded-2xl shadow-xl rotate-[-10deg]">
-             <Mail className="w-8 h-8 text-secondary" />
-          </div>
-        </motion.div>
-      </div>
+
 
       <AnimatedSection className="bg-white py-24">
         <div className="editorial-container grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-24 items-start">
